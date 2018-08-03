@@ -1,0 +1,31 @@
+<?php
+	session_start();
+	$file=glob("data/set/*");
+	$count=count($file)+1;
+	$filename;
+
+	if($count<10)
+	{
+		$filename='00'.$count;
+	}
+	else if($count<100)
+	{
+		$filename='0'.$count;
+	}
+	else
+		{$filename=$count;}
+	$title=$_POST["title"];
+	$info=$_POST["info"];
+	$username=$_SESSION["username"];
+	$time=date("Y/m/d");
+	mkdir("data/set/$filename");
+	file_put_contents("data/set/$filename/info.txt","$title\n$info\n$username\n$time\n");
+	if(isset($_FILE["filepath"]))
+	{
+		$content=$_FILE["filepath"];
+		move_uploaded_file($content['tmp_name'],"data/set/$filename/content.txt"); 
+	}
+	else
+		{file_put_contents("data/set/$filename/content.txt","");}
+	header("Location:user.php");
+?>

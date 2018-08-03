@@ -1,0 +1,85 @@
+
+div.form_style {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 500px;
+  box-shadow: 5px 5px 5px gray;
+  overflow: hidden;
+  background: #eee;
+}
+
+
+
+form.form_style {
+	padding: 20px;
+	font-size: 11pt;
+}
+
+form.form_style div {
+	text-align: center;
+	font-size: 150%;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+form.form_style label {
+    width:110px;
+    float:left;
+   	font-size: 120%;
+    line-height:24px;
+    font-weight:bold;
+
+}
+
+form.form_style > input {
+    width:300px;
+    margin-bottom:5px;
+    line-height:18px;
+    padding:5px 10px;
+    border:1px solid #CCC;
+}
+
+form.form_style .button {
+    font-size: 90%;
+    font-color: #FFFFFF;
+    width: 102px;
+    height: 30px;
+    
+    background: url(../images/button.png) no-repeat;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+form.form_style .button:hover {
+    
+    color: #000;
+    background: url(../images/button_hover.png) no-repeat;
+}
+
+form.form_style .center {
+    text-align: center;
+}
+
+form.form_style textarea {
+    margin-top:10px;
+    width:440px; 
+    height:150px; 
+    resize:none;
+}
+
+form.form_style select {
+    
+    width:300px;
+    margin-bottom:5px;
+    line-height:18px;
+    padding:5px 10px;
+    border:1px solid #CCC;
+}
+
+.submit {
+	text-align: center;
+}

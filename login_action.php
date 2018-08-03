@@ -1,0 +1,26 @@
+<?php
+	session_start();
+	$_SESSION["login"]=$_POST["login"];
+	$_SESSION["password"]=$_POST["password"];
+	$login=$_SESSION["login"];
+	$password=$_SESSION["password"];
+	$dir="data/user/$login";
+	if(is_dir($dir)==false)
+	{
+		header("Location:error.php?type=loginerror");
+		die();
+	}
+	if(is_file("$dir/info.txt")==FALSE) 
+	{
+		header("Location:error.php?type=filelost");
+		die();
+	}
+	$userinfo=file("$dir/info.txt",FILE_IGNORE_NEW_LINES);
+	if($userinfo[1]!=$password)
+	{
+		header("Location:error.php?type=passworderror");
+		die();
+	}
+	$_SESSION["username"]=$userinfo[0];
+	header("Location:index.php");
+?>
